@@ -2,27 +2,27 @@ version: '3.7'
 
 services:
 
-#  db:
-#    image: mysql:5.7
-#    restart: always
-#    environment:
-#      MYSQL_DATABASE: 'db'
-#      # So you don't have to use root, but you can if you like
-#      MYSQL_USER: 'user'
-#      # You can use whatever password you like
-#      MYSQL_PASSWORD: 'password'
-#      # Password for root access
-#      MYSQL_ROOT_PASSWORD: 'password'
-#    ports:
-#      # <Port exposed> : < MySQL Port running inside container>
-#      - '3306:3306'
-#    expose:
-#      # Opens port 3306 on the container
-#      - '3306'
-#      # Where our data will be persisted
-#    volumes:
-#      - my-db:/var/lib/mysql
- 
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      # So you don't have to use root, but you can if you like
+      MYSQL_USER: 'user'
+      # You can use whatever password you like
+      MYSQL_PASSWORD: 'password'
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      # <Port exposed> : < MySQL Port running inside container>
+      - '3306:3306'
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
+      # Where our data will be persisted
+    volumes:
+      - my-db:/var/lib/mysql
+
 
   vault:
     build:
@@ -41,39 +41,45 @@ services:
     command: server -config=/vault/config/vault-config.json
     cap_add:
       - IPC_LOCK
-    depends_on:
+    networks:
       - consul
  
- 
-  consul-worker:
-    build:
-      context: ./consul
-      dockerfile: Dockerfile
-    command: agent -server -join consul -config-file=/consul/config/config.json
-    volumes:
-      - ./consul/config/consul-config.json:/consul/config/config.json
-    depends_on:
-      - consul
-
-
-  consul:
-    build:
-      context: ./consul
-      dockerfile: Dockerfile
-    ports:
-      - 8500:8500
-    command: agent -server -bind 0.0.0.0 -client 0.0.0.0 -bootstrap-expect 1 -config-file=/consul/config/config.json
-    volumes:
-      - ./consul/config/consul-config.json:/consul/config/config.json
-      - ./consul/data:/consul/data
-
+#  consul-worker:
+#    build:
+#      context: ./consul
+#      dockerfile: Dockerfile
+#    command: agent -server -join consul -config-file=/consul/config/config.json
+#    volumes:
+#      - ./consul/config/consul-config.json:/consul/config/config.json
+#    depends_on:
+#      - consul
+#    networks:
+#      - consul
+#
+#  consul:
+#    build:
+#      context: ./consul
+#      dockerfile: Dockerfile
+#    ports:
+#      - 8500:8500
+#    command: agent -server -bind 0.0.0.0 -client 0.0.0.0 -bootstrap-expect 1 -config-file=/consul/config/config.json
+#    volumes:
+#      - ./consul/config/consul-config.json:/consul/config/config.json
+#      - ./consul/data:/consul/data
+#    networks:
+#      - consul
 
 # Names our volume
-#volumes:
-#  my-db:
+volumes:
+  my-db:
+
+#networks:
+#  default:
+#    external:
+#      name: cluster
 
 networks:
-  default:
-    external:
-      name: cluster
+  consul:
+    driver: bridge
+
   
