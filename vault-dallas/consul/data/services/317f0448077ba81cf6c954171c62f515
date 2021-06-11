@@ -1,0 +1,1 @@
+{"Token":"","Service":{"ID":"lewis-VirtualBox:vault-consul-docker_vault_1:8200","Service":"vault-consul-docker_vault","Tags":null,"Address":"192.168.0.7","Meta":null,"Port":8200,"Weights":{"Passing":1,"Warning":1},"EnableTagOverride":false,"Proxy":{"MeshGateway":{}},"Connect":{},"CreateIndex":0,"ModifyIndex":0}}

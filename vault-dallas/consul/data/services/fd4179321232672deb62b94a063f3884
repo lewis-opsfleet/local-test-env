@@ -1,0 +1,1 @@
+{"Token":"","Service":{"ID":"lewis-VirtualBox:vault-consul-docker_db_1:3306","Service":"mysql-3306","Tags":null,"Address":"192.168.0.5","Meta":null,"Port":3306,"Weights":{"Passing":1,"Warning":1},"EnableTagOverride":false,"Proxy":{"MeshGateway":{}},"Connect":{},"CreateIndex":0,"ModifyIndex":0}}

@@ -1,0 +1,49 @@
+alive: 287f2e358759 172.18.0.2:8301
+alive: 00859c0b81ee 172.18.0.4:8301
+clock: 1
+event-clock: 1
+alive: 18a050fa19da 172.19.0.2:8301
+alive: 2c86a5044dae 172.19.0.3:8301
+clock: 2
+not-alive: 2c86a5044dae
+alive: 4c697b12de7e 172.20.0.2:8301
+alive: 13b0d5039aa7 172.20.0.4:8301
+clock: 3
+alive: de291def9cea 172.20.0.2:8301
+alive: bf647e6de499 172.20.0.4:8301
+clock: 4
+alive: 9173bef4c4bf 172.18.0.2:8301
+alive: b11f1e65e250 172.18.0.4:8301
+clock: 5
+event-clock: 2
+alive: 9173bef4c4bf 172.18.0.2:8301
+alive: b11f1e65e250 172.18.0.4:8301
+clock: 6
+event-clock: 3
+event-clock: 4
+event-clock: 5
+event-clock: 6
+alive: 6d54f39e402d 172.19.0.2:8301
+alive: 0207aca1ffad 172.19.0.3:8301
+clock: 7
+alive: 30029ad9b9ff 192.168.0.6:8301
+alive: 81cf180ad512 192.168.0.8:8301
+clock: 8
+alive: 1a6fe460144c 192.168.0.2:8301
+alive: c58f97670836 192.168.0.3:8301
+clock: 9
+not-alive: c58f97670836
+alive: a41b3488ac80 192.168.0.2:8301
+alive: d4bcc3a1fb93 192.168.0.4:8301
+alive: 213344c973f1 172.18.0.2:8301
+alive: 24fed22a1a8f 172.18.0.4:8301
+clock: 10
+event-clock: 7
+alive: 213344c973f1 172.18.0.2:8301
+alive: 38fba0284bbc 172.23.0.3:8301
+alive: 3f600f0d93b9 172.24.0.3:8301
+alive: 624da6d21e36 172.24.0.5:8301
+clock: 11
+alive: e0c315f7a701 172.26.0.2:8301
+alive: 3fc7ee2f0d5e 172.26.0.4:8301
+clock: 12
